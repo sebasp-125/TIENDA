@@ -22,7 +22,9 @@ export const actionListproductAsyn = () => {
       });
     });
     console.log("LA LISTA DE FIRESTORE", pro);
+    // console.log("LA LISTA DE FIRESTORE 1", pro[3]);
     dispatch(actionListproductSyn(pro));
+    console.log(pro)
   };
 };
 

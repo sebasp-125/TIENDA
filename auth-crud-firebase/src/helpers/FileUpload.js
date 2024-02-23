@@ -1,9 +1,9 @@
 export const FileUpload = async (file) => {
-  const urlCloudinary = "https://api.cloudinary.com/v1_1/danimel/upload";
+  const urlCloudinary = "https://api.cloudinary.com/v1_1/dbwgsrqgm/upload";
 
   const formData = new FormData();
   // donde la voy a conectar o enviar
-  formData.append("upload_preset", "Cotrafa");
+  formData.append("upload_preset", "products"); 
   //lo que quiero enviar o subir
   formData.append("file", file);
 
@@ -13,6 +13,5 @@ export const FileUpload = async (file) => {
   });
   const data = await resp.json();
   console.log("dentro de upload", data);
-
   return data.secure_url;
 };

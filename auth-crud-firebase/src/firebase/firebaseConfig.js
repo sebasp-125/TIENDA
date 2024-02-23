@@ -3,16 +3,6 @@
   import { GoogleAuthProvider } from "firebase/auth";
   import { getFirestore } from "firebase/firestore";
 
-  // Your web app's Firebase configuration
-  // const firebaseConfig = {
-  //   apiKey: "AIzaSyDIOYpqkXMpzKY8cx7GzBzvi75KOQgTUEM",
-  //   authDomain: "cotrafa-intro.firebaseapp.com",
-  //   projectId: "cotrafa-intro",
-  //   storageBucket: "cotrafa-intro.appspot.com",
-  //   messagingSenderId: "445432656043",
-  //   appId: "1:445432656043:web:a720eff2284e7876ae47ee",
-  // };
-
   const firebaseConfig = {
     apiKey: "AIzaSyDhuy1R4SWy7ZSSe9iFtTUf7zBn4VtVZL8",
     authDomain: "supermercado-5350b.firebaseapp.com",
@@ -24,8 +14,6 @@
     measurementId: "G-8FNTG2SW85"
   };
   
-
-
   // Initialize Firebase
   export const app = initializeApp(firebaseConfig);
   // Conectar un Google - autenticación
