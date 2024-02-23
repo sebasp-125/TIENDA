@@ -10,7 +10,7 @@ const Home = () => {
 
   const dispatch = useDispatch();
   const { products } = useSelector((store) => store.productsStore);
-  const [productsFuction , set_Products] = useState()
+  const [productsFuction, set_Products] = useState([]);
   useEffect(() => {
     dispatch(actionListproductAsyn());
   }, []);
@@ -22,16 +22,32 @@ const Home = () => {
     handleShow()
   };
 
-  
+
   return (
     <div className="container">
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <img src={productsFuction?.foto} alt="IMAGEN MODAL"></img>
-          <Modal.Title>{productsFuction?.name}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
-        <Modal.Footer>
+
+      <Modal show={show} onHide={handleClose} >
+        <div className="custom-modal-content">
+          <Modal.Header className="custom-modal-header" closeButton>
+            <img className="img_Nodal" src={productsFuction?.foto} alt="IMAGEN DE LA NODAL, NO EXISTE" style={{ marginRight: "30px" }} />
+            <div>
+              <h1>{productsFuction?.name}</h1>
+              <p>{productsFuction?.price}</p>
+              <p>Precio con IVA incluido</p>
+              <h5 className="h5_Peso">Peso aproximado por pieza, puede variar de acuerdo al peso real</h5>
+              <h3 className="h3_Madurez">Selecciona la Madurez que deseas</h3>
+              <select>
+                <option className="wrapOption_">Por elegir</option>
+                <option>Maduro (Para Hoy)</option>
+                <option>Normal (3-5 días)</option>
+                <option>Verde (7 días)</option>
+              </select>
+              <h1>Productos Relacionados</h1>
+             
+            </div>
+          </Modal.Header>
+        </div>
+        <Modal.Footer className="custom-modal-footer">
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
@@ -40,6 +56,8 @@ const Home = () => {
           </Button>
         </Modal.Footer>
       </Modal>
+
+
       <div className="row">
         <div className="col">
           <img src="https://res.cloudinary.com/dbwgsrqgm/image/upload/v1708568321/TIENDA/banner_bfvvrh.png" className="img-fluid" alt="Banner" />
