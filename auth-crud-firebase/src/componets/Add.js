@@ -27,6 +27,7 @@ const Add = () => {
     dispatch(actionAddproductAsyn(obj));
     reset();
   };
+
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     console.log(file);
@@ -36,62 +37,67 @@ const Add = () => {
   };
 
   return (
-    <div className="divAdd">
+    <div className="divAdd" style={{ borderRadius: "20px",position: "relative" ,top: "50px" , maxWidth: "400px", margin: "auto" }}>
       <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formPlaintextname">
-          <Form.Label column sm="2">
-            Nombre Producto
-          </Form.Label>
-
+        <Form.Group controlId="formPlaintextname">
+          <Form.Label style={{ color: "red" }}>Nombre Producto</Form.Label>
           <Form.Control
-            placeholder="user_name@name.com"
+            type="text"
+            placeholder="Ingrese el nombre del producto"
             name="name"
             value={formValue.name}
             onChange={handleInputChange}
+            style={{ borderColor: "red", color: "red" }}
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formPlaintextprice">
-          <Form.Label column sm="2">
-            price
-          </Form.Label>
-
+        <Form.Group controlId="formPlaintextprice">
+          <Form.Label style={{ color: "red" }}>Precio</Form.Label>
           <Form.Control
             type="text"
-            placeholder="price"
+            placeholder="Ingrese el precio"
             name="price"
             value={formValue.price}
             onChange={handleInputChange}
+            style={{ borderColor: "red", color: "red" }}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formPlaintextprice">
-          <Form.Label column sm="2">
-            Description
-          </Form.Label>
 
+        <Form.Group controlId="formPlaintextprice">
+          <Form.Label style={{ color: "red" }}>Descuento del Producto</Form.Label>
           <Form.Control
             type="text"
-            placeholder="description"
+            placeholder="Ingrese la descripción"
             name="des"
             value={formValue.des}
             onChange={handleInputChange}
+            style={{ borderColor: "red", color: "red" }}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formPlaintextprice">
-          <Form.Label column sm="2">
-            Imagen
-          </Form.Label>
 
+        <Form.Group controlId="formPlaintextprice">
+          <Form.Label style={{ color: "red" }}>Imagen</Form.Label>
           <Form.Control
             type="file"
             name="foto"
-            accept="*/jpg"
+            // accept="*/jpg"
             placeholder="Ingrese Foto.jpg"
             onChange={handleFileChange}
+            style={{ borderColor: "red", color: "red" }}
           />
         </Form.Group>
 
-        <Button type="submit">Save</Button>
+        <Button
+          variant="primary"
+          type="submit"
+          style={{
+            backgroundColor: "red",
+            borderColor: "red",
+            marginTop: "15px",
+          }}
+        >
+          Guardar
+        </Button>
       </Form>
     </div>
   );

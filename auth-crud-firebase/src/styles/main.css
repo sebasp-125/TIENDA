@@ -1,8 +1,48 @@
-/* .divLogin {
-    margin: 25%;
-    padding: 15px;
-    background: rgb(226, 226, 251);
-} */
+.text-center{
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 120px;
+}
+
+.row-title{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-title{
+    color: black !important;
+    font-size: 13px;
+}
+
+.price{
+    color: black;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.card-body{
+    padding: 0px;
+}
+
+.card-discount{
+    background-color: #B8B4B4;
+    border-radius: 200px;
+    width: 70px;
+    color: purple;
+    font-weight: bold !important;
+    margin: 10px;
+}
+
+.btn-success{
+    margin-bottom: 20px;
+    background-color: #0AC763;
+    color: white;
+    border: none;
+    padding: 8px;
+    width: 70%;
+    border-radius: 8px;
+}
 
 .divAdd {
     margin: 7% 15% 5% 15%;
@@ -10,7 +50,7 @@
     background: rgb(226, 226, 251);
 }
 
-.divTable{
+.divTable {
     margin: 7% 10% 7% 10%;
     padding: 25px;
     background: rgb(226, 226, 251);
