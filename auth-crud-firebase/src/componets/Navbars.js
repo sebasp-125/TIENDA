@@ -32,13 +32,12 @@ const Navbars = () => {
             <Nav.Link as={Link} to="/search">Buscar</Nav.Link>
           </Nav>
           <Form className="d-flex">
-            <Button
+            <Button style={{border: "none"}}
               variant="outline-success"
               onClick={() => dispatch(actionLogoutAsyn())}
             >
               Logout
             </Button>
-            <Button style={{ marginLeft: "20px" }}>Carrito</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
