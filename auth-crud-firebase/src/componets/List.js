@@ -23,7 +23,7 @@ const List = () => {
   };
 
   useEffect(() => {
-    dispatch(actionListproductAsyn());
+    dispatch(actionListproductAsyn()); 
   }, []);
 
   console.log(products);
