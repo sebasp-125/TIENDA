@@ -1,52 +1,47 @@
-/* .divLogin {
-    margin: 25%;
-    padding: 15px;
-    background: rgb(226, 226, 251);
-} */
-.offer-container {
-    display: flex;
-    align-items: center;
-    float: left;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.offer-details {
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-}
-
-.offer-name {
-    margin-bottom: 10px;
-}
-
-.offer-price {
-    margin-bottom: 5px;
-}
-
-.original-price {
-    color: #666;
-    text-decoration: line-through;
-}
-
-.discount-price {
-    color: #333;
-    font-weight: bold;
-}
-
-.offer-discount {
-    color: #4CAF50;
-    font-weight: bold;
-}
-
-.add-button {
-    background-color: #4CAF50;
+.text-center{
     color: white;
-    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+    bottom: 120px;
+}
+
+.row-title{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-title{
+    color: black !important;
+    font-size: 13px;
+}
+
+.price{
+    color: black;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.card-body{
+    padding: 0px;
+}
+
+.card-discount{
+    background-color: #B8B4B4;
+    border-radius: 200px;
+    width: 70px;
+    color: purple;
+    font-weight: bold !important;
+    margin: 10px;
+}
+
+.btn-success{
+    margin-bottom: 20px;
+    background-color: #0AC763;
+    color: white;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 8px;
+    width: 70%;
+    border-radius: 8px;
 }
 
 .divAdd {

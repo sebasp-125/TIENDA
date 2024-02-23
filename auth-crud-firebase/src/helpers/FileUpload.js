@@ -3,7 +3,7 @@ export const FileUpload = async (file) => {
 
   const formData = new FormData();
   // donde la voy a conectar o enviar
-  formData.append("upload_preset", "products"); 
+  formData.append("upload_preset", "tienda"); 
   //lo que quiero enviar o subir
   formData.append("file", file);
 
