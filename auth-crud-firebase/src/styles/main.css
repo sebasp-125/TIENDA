@@ -1,52 +1,12 @@
-/* .divLogin {
-    margin: 25%;
-    padding: 15px;
-    background: rgb(226, 226, 251);
-} */
-.offer-container {
-    display: flex;
-    align-items: center;
-    float: left;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.offer-details {
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-}
-
-.offer-name {
-    margin-bottom: 10px;
-}
-
-.offer-price {
-    margin-bottom: 5px;
-}
-
-.original-price {
-    color: #666;
-    text-decoration: line-through;
-}
-
-.discount-price {
-    color: #333;
-    font-weight: bold;
-}
-
-.offer-discount {
-    color: #4CAF50;
-    font-weight: bold;
-}
-
-.add-button {
-    background-color: #4CAF50;
+.text-center{
     color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    text-align: center;
+    position: relative;
+    bottom: 120px;
+}
+
+.row-products{
+    background-color: red;
 }
 
 .divAdd {

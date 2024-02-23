@@ -64,7 +64,7 @@ const Add = () => {
         </Form.Group>
 
         <Form.Group controlId="formPlaintextprice">
-          <Form.Label style={{ color: "red" }}>Descripción</Form.Label>
+          <Form.Label style={{ color: "red" }}>Descuento del Producto</Form.Label>
           <Form.Control
             type="text"
             placeholder="Ingrese la descripción"
