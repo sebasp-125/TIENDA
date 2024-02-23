@@ -1,31 +1,31 @@
-.text-center{
+.text-center {
     color: white;
     text-align: center;
     position: relative;
     bottom: 120px;
 }
 
-.row-title{
+.row-title {
     font-size: 18px;
     font-weight: bold;
 }
 
-.card-title{
+.card-title {
     color: black !important;
     font-size: 13px;
 }
 
-.price{
+.price {
     color: black;
     font-weight: bold;
     margin: 0px;
 }
 
-.card-body{
+.card-body {
     padding: 0px;
 }
 
-.card-discount{
+.card-discount {
     background-color: #B8B4B4;
     border-radius: 200px;
     width: 70px;
@@ -34,7 +34,7 @@
     margin: 10px;
 }
 
-.btn-success{
+.btn-success {
     margin-bottom: 20px;
     background-color: #0AC763;
     color: white;
@@ -43,6 +43,31 @@
     width: 70%;
     border-radius: 8px;
 }
+
+/* ------- VENTANA MODAL ------------ */
+.img_Nodal{
+    width: 250px;
+}
+
+.h3_Madurez {
+    font-size: 17px;
+}
+
+.h5_Peso {
+    font-size: 13px;
+}
+
+select {
+    border-radius: 8px;
+padding: 8px;
+width: 300px;
+}
+
+wrapOption_ {
+    margin: 200px;
+}
+
+/* --------------- */
 
 .divAdd {
     margin: 7% 15% 5% 15%;
