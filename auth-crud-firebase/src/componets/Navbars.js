@@ -3,47 +3,48 @@ import { Button, Container, Form, Nav, Navbar } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { actionLogoutAsyn } from "../redux/actions/actionsLogin";
 import { Link } from "react-router-dom";
+import styled from 'styled-components';
+
+const Logo = styled.img`
+  width: auto;
+  height: 40px;
+`;
 
 const Navbars = () => {
   const dispatch = useDispatch();
-  return (
-    <div>
-      <Navbar expand="lg" className="bg-body-tertiary">
-        <Container fluid>
-          <Navbar.Brand href="#">Ejemplo Redux</Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
-            <Nav
-              className="me-auto my-2 my-lg-0"
-              style={{ maxHeight: "100px" }}
-              navbarScroll
-            >
-              <Nav.Link href="#action1">
-                <Link to="/">Home</Link>
-              </Nav.Link>
-              <Nav.Link>
-                <Link to="/add">Add</Link>
-              </Nav.Link>
 
-              <Nav.Link>
-                <Link to="/list">List</Link>
-              </Nav.Link>
-              <Nav.Link>
-                <Link to="/search">Buscar</Link>
-              </Nav.Link>
-            </Nav>
-            <Form className="d-flex">
-              <Button
-                variant="outline-success"
-                onClick={() => dispatch(actionLogoutAsyn())}
-              >
-                Logout
-              </Button>
-            </Form>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </div>
+  return (
+    <Navbar expand="lg" bg="light" variant="light">
+      <Container>
+        <Navbar.Brand>
+          <Logo src="https://res.cloudinary.com/dbwgsrqgm/image/upload/v1708566287/TIENDA/Tiendita_nderwo.png" alt="Imagen Logo" />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="me-auto my-2 my-lg-0"
+            style={{ maxHeight: "100px" }}
+            navbarScroll
+          >
+            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/add">Add</Nav.Link>
+            <Nav.Link as={Link} to="/list">List</Nav.Link>
+            <Nav.Link as={Link} to="/search">Buscar</Nav.Link>
+          </Nav>
+          <Form className="d-flex">
+            <Button
+              variant="outline-success"
+              onClick={() => dispatch(actionLogoutAsyn())}
+            >
+              Logout
+            </Button>
+            <Button style={{ marginLeft: "20px" }}>Carrito</Button>
+          </Form>
+        </Navbar.Collapse>
+      </Container>
+
+      
+    </Navbar>
   );
 };
 
