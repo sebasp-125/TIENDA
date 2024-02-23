@@ -1,56 +1,80 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { actionListproductAsyn } from "../redux/actions/actionsProduct";
-import { Button, Modal } from "react-bootstrap";
+import { Button, Container, Modal, Navbar, Offcanvas } from "react-bootstrap";
 
 const Home = () => {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const dispatch = useDispatch();
   const { products } = useSelector((store) => store.productsStore);
-  const [productsFuction, set_Products] = useState([]);
+
   useEffect(() => {
     dispatch(actionListproductAsyn());
-  }, []);
+  }, [dispatch]);
 
-  // const user = useSelector((state) => state.loginStore);
-  // const productosPRO = localStorage.getItem("productosPRO");
-  const Nodal = (products) => {
-    set_Products(products);
-    handleShow()
+  const handleShowModal = (product) => {
+    setSelectedProduct(product);
+    setShowModal(true);
   };
 
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
 
   return (
     <div className="container">
+      <div>
+        {[false].map((expand) => (
+          <Navbar key={expand} expand={expand}>
+            <Container fluid style={{ display: "flex", position: "relative", left: "47%", width: "60px", border: "none" }}>
+              <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+              <Navbar.Offcanvas
+                placement="end"
+              >
+                <Offcanvas.Body>
+                  {selectedProduct && (
+                    <div>
+                      <img src={selectedProduct.foto} alt="PRODUCTO COMPRADO" />
+                    </div>
+                  )}
+                </Offcanvas.Body>
+              </Navbar.Offcanvas>
+            </Container>
+          </Navbar>
+        ))}
+      </div>
 
-      <Modal show={show} onHide={handleClose} >
+      <Modal show={showModal} onHide={handleCloseModal}>
         <div className="custom-modal-content">
           <Modal.Header className="custom-modal-header" closeButton>
-            <img className="img_Nodal" src={productsFuction?.foto} alt="IMAGEN DE LA NODAL, NO EXISTE"/>
-            <div>
-              <h1>{productsFuction?.name}</h1>
-              <p>{productsFuction?.price}</p>
-              <p>Precio con IVA incluido</p>
-              <h5 className="h5_Peso">Peso aproximado por pieza, puede variar de acuerdo al peso real</h5>
-              <h3 className="h3_Madurez">Selecciona la Madurez que deseas</h3>
-              <select>
-                <option className="wrapOption_">Por elegir</option>
-                <option>Maduro (Para Hoy)</option>
-                <option>Normal (3-5 días)</option>
-                <option>Verde (7 días)</option>
-              </select>
-              <h1>Productos Relacionados</h1>
-            </div>
+            {selectedProduct && (
+              <div>
+                <img className="img_Nodal" src={selectedProduct.foto} alt="IMAGEN DE LA NODAL, NO EXISTE" />
+                <div>
+                  <h1>{selectedProduct.name}</h1>
+                  <p>{selectedProduct.price}</p>
+                  <p>Precio con IVA incluido</p>
+                  <h5 className="h5_Peso">Peso aproximado por pieza, puede variar de acuerdo al peso real</h5>
+                  <h3 className="h3_Madurez">Selecciona la Madurez que deseas</h3>
+                  <select>
+                    <option className="wrapOption_">Por elegir</option>
+                    <option>Maduro (Para Hoy)</option>
+                    <option>Normal (3-5 días)</option>
+                    <option>Verde (7 días)</option>
+                  </select>
+                  <h1>Productos Relacionados</h1>
+                </div>
+              </div>
+            )}
           </Modal.Header>
+          <Modal.Footer className="custom-modal-footer">
+            <Button variant="secondary" onClick={handleCloseModal}>
+              Agregar
+            </Button>
+          </Modal.Footer>
         </div>
-        <Modal.Footer className="custom-modal-footer">
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
       </Modal>
 
       <div className="row">
@@ -63,7 +87,7 @@ const Home = () => {
         <div className="col">
           <h1 className="row-title">Ofertas</h1>
           <div className="row" style={{ boxShadow: '2px 2px 4px rgba(0.2, 0, 0, 0.2)', padding: '10px', borderRadius: "20px" }}>
-            {products?.map((product, index) => (
+            {products.map((product, index) => (
               <div className="col-md-3" key={index}>
                 <div className="card mb-3">
                   <p className="card-discount">{product.description}</p>
@@ -71,7 +95,7 @@ const Home = () => {
                   <p className="price">{product.price}</p>
                   <div className="card-body">
                     <h5 className="card-title">{product.name}</h5>
-                    <button className="btn-success" onClick={() => Nodal(product)}>Agregar</button>
+                    <button className="btn-success" onClick={() => handleShowModal(product)}>Agregar</button>
                   </div>
                 </div>
               </div>
@@ -82,9 +106,9 @@ const Home = () => {
 
       <div className="row">
         <div className="col">
-          <h1 className="row-title" style={{margin: "20px"}}>Lo mas popular</h1>
+          <h1 className="row-title" style={{ margin: "20px" }}>Lo mas popular</h1>
           <div className="row" style={{ boxShadow: '2px 2px 4px rgba(0.2, 0, 0, 0.2)', padding: '10px', borderRadius: "20px" }}>
-            {products?.map((product, index) => (
+            {products.map((product, index) => (
               <div className="col-md-3" key={index}>
                 <div className="card mb-3">
                   <p className="card-discount">{product.description}</p>
@@ -92,7 +116,7 @@ const Home = () => {
                   <p className="price">{product.price}</p>
                   <div className="card-body">
                     <h5 className="card-title">{product.name}</h5>
-                    <button className="btn-success" onClick={() => Nodal(product)}>Agregar</button>
+                    <button className="btn-success" onClick={() => handleShowModal(product)}>Agregar</button>
                   </div>
                 </div>
               </div>
@@ -100,7 +124,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      
     </div>
   );
 };
