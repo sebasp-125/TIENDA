@@ -80,7 +80,7 @@ const Add = () => {
           <Form.Control
             type="file"
             name="foto"
-            accept="*/jpg"
+            // accept="*/jpg"
             placeholder="Ingrese Foto.jpg"
             onChange={handleFileChange}
             style={{ borderColor: "red", color: "red" }}
