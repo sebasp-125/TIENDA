@@ -12,7 +12,7 @@
 
 ## Instalación 💻
 
-1. Clona este repositorio: `git clone https://github.com/tuusuario/mitienda.git`
+1. Clona este repositorio: https://github.com/sebasp-125/TIENDA.git
 2. Instala las dependencias: `npm install`
 3. Inicia la aplicación: `npm start`
 
